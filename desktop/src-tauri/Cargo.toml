@@ -1,0 +1,19 @@
+[package]
+name = "vocivio-desktop"
+version = "0.1.0"
+edition = "2021"
+description = "Vocivio desktop app (Tauri UI shell over vocivio-core)."
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+vocivio-core = { path = ".." }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+# OS keychain (Windows Credential Manager) for the per-partner bootstrap credential + rotating
+# resumption token — never a plaintext field (Phase E / Option C auth-storage).
+keyring = { version = "3", features = ["windows-native"] }

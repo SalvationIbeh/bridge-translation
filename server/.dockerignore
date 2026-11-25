@@ -1,0 +1,12 @@
+# Build context is ./server — keep it lean and keep dev artifacts out of the image.
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# stray audio/test artifacts (never bake audio into the image)
+*.wav
+*.pcm
+test_output.wav

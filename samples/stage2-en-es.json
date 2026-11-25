@@ -1,0 +1,36 @@
+{
+  "name": "stage2-en-es-agent-utterances",
+  "description": "English agent-side CS utterances for the en->es reverse-leg benchmark (council decision 2026-06-09). `reference` is the English STT WER target; `expected_translation_es` is informational — eyeball/listen-test the Spanish output quality against it. Texts avoid digits so Whisper's numeral formatting can't inflate WER.",
+  "cases": [
+    {
+      "id": "en_card_block",
+      "group": "short",
+      "reference": "I have blocked your card and a replacement is already on the way.",
+      "expected_translation_es": "He bloqueado su tarjeta y un reemplazo ya esta en camino."
+    },
+    {
+      "id": "en_balance_check",
+      "group": "short",
+      "reference": "I can see your current account balance right here on my screen.",
+      "expected_translation_es": "Puedo ver el saldo actual de su cuenta aqui en mi pantalla."
+    },
+    {
+      "id": "en_payment_rejected",
+      "group": "short",
+      "reference": "Your payment was rejected because the card has expired.",
+      "expected_translation_es": "Su pago fue rechazado porque la tarjeta ha expirado."
+    },
+    {
+      "id": "en_transfer_pending",
+      "group": "short",
+      "reference": "Your transfer is still pending and should arrive tomorrow morning.",
+      "expected_translation_es": "Su transferencia sigue pendiente y deberia llegar manana por la manana."
+    },
+    {
+      "id": "en_card_arrival",
+      "group": "short",
+      "reference": "Your new card will arrive early next week.",
+      "expected_translation_es": "Su nueva tarjeta llegara a principios de la proxima semana."
+    }
+  ]
+}

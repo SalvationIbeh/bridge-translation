@@ -1,0 +1,12 @@
+{
+  "name": "bridge-spike",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "probe:realtime": "node ./scripts/probe_realtime_translation.mjs",
+    "probe:live": "node ./scripts/serve_live_translation_probe.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  }
+}

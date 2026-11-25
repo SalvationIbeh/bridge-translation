@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocivio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Vocivio</h1>
+      <span id="status" class="status idle">idle</span>
+    </header>
+
+    <section class="config">
+      <label>Server
+        <input id="server" type="text" value="ws://localhost:8000/ws/translate" />
+      </label>
+      <label>Token
+        <input id="token" type="password" placeholder="minted HMAC token" />
+      </label>
+      <div class="row">
+        <label>From
+          <select id="source">
+            <option value="es" selected>Spanish</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+        <label>To
+          <select id="target">
+            <option value="en" selected>English</option>
+            <option value="es">Spanish</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <label>Input (mic / cable)
+          <select id="input-device"><option value="">Default</option></select>
+        </label>
+        <label>Output (headset)
+          <select id="output-device"><option value="">Default</option></select>
+        </label>
+      </div>
+      <p class="hint">🎧 Use a headset — v1 has no echo cancellation, so speakers will loop translated audio back into the mic.</p>
+    </section>
+
+    <section class="controls">
+      <button id="connect">Connect &amp; Translate</button>
+      <button id="disconnect" disabled>Stop</button>
+      <button id="kill" class="kill" disabled>Kill switch — pass call through untranslated</button>
+      <label class="redact">
+        <input id="redact" type="checkbox" /> Redaction mode — mute audio to server
+        <kbd>Ctrl+Shift+R</kbd>
+      </label>
+      <div id="redact-banner" class="redact-banner">🔇 REDACTING — audio is NOT leaving this machine</div>
+    </section>
+
+    <section class="log">
+      <h2>Transcript</h2>
+      <div id="transcript"></div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>

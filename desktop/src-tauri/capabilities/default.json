@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Core permissions for the Vocivio main window: invoke the app's own commands and receive backend events (status/transcript). No plugin or filesystem capabilities are granted — the client only talks to its own Rust backend over IPC.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

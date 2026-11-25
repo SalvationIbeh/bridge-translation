@@ -1,0 +1,30 @@
+# LinguaBridge Server Dependencies
+# All packages MIT / Apache 2.0 licensed — safe for commercial use
+
+# Web framework
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+websockets==12.0
+
+# AI — STT
+faster-whisper==1.0.3
+ctranslate2==4.3.1
+
+# AI — Translation (Opus-MT via HuggingFace)
+transformers==4.41.0
+sentencepiece==0.2.0
+sacremoses==0.1.1
+
+# AI — TTS
+piper-tts==1.2.0
+onnxruntime-gpu==1.26.0  # replaces CPU-only onnxruntime bundled with piper-tts
+
+# AI — VAD (torch/torchaudio pre-installed in RunPod base image)
+
+# Audio processing
+soundfile==0.12.1
+numpy==1.26.4
+librosa==0.10.2
+
+# Utilities
+python-multipart==0.0.9

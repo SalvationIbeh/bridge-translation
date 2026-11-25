@@ -1,0 +1,28 @@
+.env
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+runs/
+samples/*.wav
+samples/*.mp3
+samples/*.m4a
+samples/realtime-pcm/
+samples/telephony-pcm/
+samples/realtime-pcm-en/
+samples/telephony-pcm-en/
+*.wav
+models/
+graphify-out/
+files.zip
+test.txt
+
+# Rust / Cargo build artifacts (desktop client)
+target/
+desktop/target/
+
+# Tauri-generated schemas (regenerated on build)
+desktop/src-tauri/gen/schemas/
+
+# Stray screen captures
+screencapture-*.png

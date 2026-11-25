@@ -1,0 +1,41 @@
+{
+  "name": "stage1-fake-cs-utterances",
+  "cases": [
+    {
+      "id": "long_payment_problem",
+      "group": "long_baseline",
+      "audio_file": "spanish_test.mp3",
+      "expected_spanish": "Tengo un problema con mi pedido y mi pago fue rechazado."
+    },
+    {
+      "id": "card_block",
+      "group": "short",
+      "audio_file": "short_01_card_block.mp3",
+      "expected_spanish": "Quiero bloquear mi tarjeta por un cargo extrano."
+    },
+    {
+      "id": "balance_check",
+      "group": "short",
+      "audio_file": "short_02_balance_check.mp3",
+      "expected_spanish": "Necesito revisar el saldo de mi cuenta."
+    },
+    {
+      "id": "payment_rejected",
+      "group": "short",
+      "audio_file": "short_03_payment_rejected.mp3",
+      "expected_spanish": "Mi pago fue rechazado tres veces."
+    },
+    {
+      "id": "transfer_pending",
+      "group": "short",
+      "audio_file": "short_04_transfer_pending.mp3",
+      "expected_spanish": "Mi transferencia sigue pendiente desde ayer."
+    },
+    {
+      "id": "card_arrival",
+      "group": "short",
+      "audio_file": "short_05_card_arrival.mp3",
+      "expected_spanish": "Cuando llegara mi nueva tarjeta."
+    }
+  ]
+}

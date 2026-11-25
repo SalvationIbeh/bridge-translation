@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bridge Live Translation Probe</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="probe">
+      <header class="toolbar">
+        <div>
+          <p class="eyebrow">Bridge Stage 1</p>
+          <h1>Live Mic Probe</h1>
+        </div>
+        <div class="status-row">
+          <span id="connectionState" class="status" data-tone="idle">Idle</span>
+          <span id="metricState" class="status" data-tone="idle">Metrics off</span>
+        </div>
+      </header>
+
+      <section class="controls" aria-label="Probe controls">
+        <label class="field">
+          <span>Translated output</span>
+          <select id="targetLanguage">
+            <option value="en" selected>English</option>
+            <option value="es">Spanish</option>
+          </select>
+        </label>
+        <div class="command-row">
+          <button id="startButton" class="primary" type="button">Start Mic</button>
+          <button id="armButton" type="button" disabled>Arm Phrase</button>
+          <button id="resetButton" type="button" disabled>Reset Metrics</button>
+          <button id="stopButton" type="button" disabled>Stop</button>
+        </div>
+      </section>
+
+      <section class="meters" aria-label="Audio meters">
+        <div class="meter-row">
+          <div>
+            <span>Mic input</span>
+            <strong id="inputReadout">Waiting</strong>
+          </div>
+          <div class="meter"><i id="inputMeter"></i></div>
+        </div>
+        <div class="meter-row">
+          <div>
+            <span>Translated audio</span>
+            <strong id="outputReadout">Waiting</strong>
+          </div>
+          <div class="meter"><i id="outputMeter"></i></div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Live timing">
+        <article>
+          <span>Speech detected</span>
+          <strong id="speechMetric">n/a</strong>
+        </article>
+        <article>
+          <span>First translated audio</span>
+          <strong id="audioMetric">n/a</strong>
+        </article>
+        <article>
+          <span>First transcript delta</span>
+          <strong id="transcriptMetric">n/a</strong>
+        </article>
+      </section>
+
+      <section class="surfaces">
+        <article class="surface">
+          <header>
+            <h2>Translated Transcript</h2>
+            <button id="clearTranscriptButton" type="button">Clear</button>
+          </header>
+          <p id="transcript" class="transcript" aria-live="polite"></p>
+        </article>
+        <article class="surface">
+          <header>
+            <h2>Session Events</h2>
+          </header>
+          <ol id="events" class="events"></ol>
+        </article>
+      </section>
+
+      <audio id="translatedAudio" controls autoplay playsinline></audio>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
